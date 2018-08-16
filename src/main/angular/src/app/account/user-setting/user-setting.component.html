@@ -1,0 +1,36 @@
+<div class="card user-setting">
+   <div class="card-header tab-card p-0 bg-white markit-setting-collapse" role="tab">
+      <div class="py-2 px-3 markit-cursor" >
+         <small>
+         <span>
+           <b>{{input.label}} &nbsp;&nbsp;&nbsp;&nbsp; </b>
+           <span class="text-muted">{{ input.originalInput }}</span>
+         </span>
+         </small>
+      </div>
+   </div>
+   <div  role="tabpanel">
+      <div class="card-block px-3 pt-2 pb-3">
+         <form [formGroup]="validator" (ngSubmit)="onSubmit()">
+         <div>
+            <div class="form-group">
+               <small>
+               <label attr.for={{input.inputName}} class="col-form-label">New {{input.label}}</label>
+               </small>
+               <input class="form-control form-control-sm markit-setting-input" type="{{type}}" id={{input.inputName}}
+               name={{input.inputName}} formControlName="inputValidate" [(ngModel)]="inputValue">
+               <div *ngIf="errorMessage"
+                  class="alert alert-danger">
+                  {{errorMessage}}
+               </div>
+            </div>
+            <div class="mt-2">
+               <button [disabled]="submitted" type="submit" class="btn btn-secondary btn-sm">
+                 Update
+               </button>
+            </div>
+         </div>
+         </form>
+      </div>
+   </div>
+</div>

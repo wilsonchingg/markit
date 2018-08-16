@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<beans
+	xmlns="http://www.springframework.org/schema/beans" 
+ 	xmlns:int-feed="http://www.springframework.org/schema/integration/feed"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:int="http://www.springframework.org/schema/integration"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/integration/feed
+	http://www.springframework.org/schema/integration/feed/spring-integration-feed.xsd">
+	
+	<int-feed:inbound-channel-adapter id="forexFeed" 
+						channel="feedChannel" 
+						auto-startup="true" 
+						url="http://www.forexlive.com/feed">
+		<int:poller fixed-rate="10000" max-messages-per-poll="20" />
+	</int-feed:inbound-channel-adapter>
+	
+	<int-feed:inbound-channel-adapter id="investopediaFeed" 
+						channel="feedChannel" 
+						auto-startup="true" 
+						url="https://www.investopedia.com/feedbuilder/feed/getfeed/?feedName=rss_headline">
+		<int:poller fixed-rate="10000" max-messages-per-poll="20" />
+	</int-feed:inbound-channel-adapter>
+	
+	<int-feed:inbound-channel-adapter id="economistFeed" 
+						channel="feedChannel" 
+						auto-startup="true" 
+						url="http://www.economist.com/sections/business-finance/rss.xml">
+		<int:poller fixed-rate="10000" max-messages-per-poll="20" />
+	</int-feed:inbound-channel-adapter>
+	
+	<int:channel id="feedChannel">
+		<int:queue/>
+	</int:channel>
+</beans>

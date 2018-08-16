@@ -1,0 +1,31 @@
+/* Currency Preview */
+.currency-preview-container{
+    background-color: white;
+    padding: 2px;
+    max-height: 180px;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+.currency-preview-info{
+    width: 50%;
+}
+.btn{
+    width: 95px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.chart{
+    height: 170px;
+}
+
+@media(max-width:767px) {
+    .currency-preview-container {
+        max-width: 330px;
+    }
+    .chart {
+        max-width: 175px;
+    }
+    .currency-preview-info{
+        max-width: 167px;
+    }
+}

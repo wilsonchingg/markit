@@ -1,0 +1,22 @@
+.currency{
+    padding-bottom: 10px;
+    padding-right: 0px;
+}
+
+.currencies #row_1{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.no_favorites{
+    width: 60%;
+    height: 50px;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    alignment: center;
+    position: relative;
+    color: white;
+    background-color: steelblue;
+}

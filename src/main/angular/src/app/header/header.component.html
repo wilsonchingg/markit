@@ -1,0 +1,43 @@
+<div id="markit-header">
+	<nav class="container navbar navbar-toggleable-md markit-header
+	 navbar-inverse pt-0 pb-0" >
+		<div class="navbar-header">
+			<button class="navbar-toggler navbar-toggler-right markit-cursor" type="button"
+				data-toggle="collapse" data-target="#markit-navbar-toggle"
+				aria-controls="markit-navbar-toggle" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a class="navbar-brand" routerLink="/">
+		  <img
+				src="/markit/assets/img/logo_text_white.svg" class="markit-logo-text">
+				<img src="/markit/assets/img/logo.svg" class="markit-logo">
+			</a>
+		</div>
+	  <div class="navbar-collapse collapse" id="markit-navbar-toggle" *ngIf="!isLoggedIn()">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a routerLink="/" class="nav-link markit-cursor">Home</a></li>
+				<li class="nav-item"><a routerLink="/markets" class="nav-link markit-cursor">Markets</a></li>
+				<li class="nav-item nonMember">
+					<div class="button-wrapper">
+						<a id="loginBtn" routerLink="/login" class="btn btn-primary ml-1 mr-2 nav-link markit-cursor">Login</a>
+					</div>
+				</li>
+				<li class="nav-item nonMember">
+					<div class="button-wrapper">
+						<a id="registerBtn" routerLink="/register" class="btn btn-primary nav-link markit-cursor">Register</a>
+					</div>
+				</li>
+			</ul>
+	  </div>
+	  <div class="navbar-collapse collapse" id="markit-navbar-toggle" *ngIf="isLoggedIn()">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a routerLink="/" class="nav-link markit-cursor">Home</a></li>
+				<li class="nav-item"><a routerLink="/markets" class="nav-link markit-cursor">Markets</a></li>
+				<li class="nav-item"><a class="nav-link markit-cursor" routerLink="/dashboard">Dashboard</a></li>
+				<li class="nav-item"><a routerLink="/user/setting" class="nav-link markit-cursor">User Settings</a></li>
+				<li class="nav-item"><a (click)="logout()" class="nav-link markit-cursor">Logout</a></li>
+			</ul>
+	  </div>
+	</nav>
+</div>

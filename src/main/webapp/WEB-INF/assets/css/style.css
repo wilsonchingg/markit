@@ -1,0 +1,25 @@
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+.markit-cursor {
+	cursor: pointer;
+}
+
+.markit-underscore:hover {
+	text-decoration: underline !important;
+}
+
+.markit-valign {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.markit-no-underscore {
+	text-decoration: none !important;
+}
+
+.bg-white {
+	background-color: white !important;
+}

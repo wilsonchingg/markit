@@ -1,0 +1,10 @@
+footer {
+	background-color: #21518F;
+	height: 50px;
+}
+footer * {
+	color: rgba(255,255,255,0.5);
+}
+#market-footer {
+	background-color: #21518F !important;
+}

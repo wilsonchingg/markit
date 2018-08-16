@@ -1,0 +1,80 @@
+<div id="currency-converter" class="card">
+    <div class="card-block">
+        <div class="row">
+            <div class="col-sm">
+                <form>
+                    <div class="form-group">
+                        <select class="form-control" name="sel1" [(ngModel)]="cur1">
+                            <option ngValue="USD">
+                                US Dollar (USD)
+                            </option>
+                            <option *ngFor="let current of currentMarket;let i = index" [ngValue]="current.symbol">
+                                {{current.name}}
+                            </option>
+                        </select>
+                        <input type="number" name="inputCurrency" [(ngModel)]="inputCurrency"
+                               class="form-control" id="inputLabel">
+                        <label for="inputLabel">1 USD = {{getPrice(cur1)}} {{cur1}}</label>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm">
+                <form>
+                    <div class="form-group">
+                        <select class="form-control" name="sel2" [(ngModel)]="cur2">
+                            <option ngValue="USD">
+                                US Dollar (USD)
+                            </option>
+                            <option *ngFor="let current of currentMarket;let i = index" [ngValue]="current.symbol">
+                                {{current.name}}
+                            </option>
+                        </select>
+                        <input type="number" class="form-control" disabled="true" id="outputLabel"
+                               value="{{(inputCurrency*getPrice(cur2)/getPrice(cur1)).toFixed(2)}}">
+                        <label for="outputLabel">1 USD = {{getPrice(cur2)}} {{cur2}}</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="markit-datatable">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Currency</th>
+            <th>Value</th>
+            <th class="hide-2">Change</th>
+            <th class="hide-1">Last Updated</th>
+            <th class="hide-1">From Now</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let current of currentMarket;let i = index">
+            <td><a [routerLink]="current.url">{{current.name}}</a></td>
+            <td>{{current.price_num.toFixed(2)}}</td>
+
+            <td class="hide-2" [ngClass]="current.customClass">
+               {{current.change > 0? '+': ''}}{{!current.change? '-': current.change.toFixed(4) + '%'}}
+            </td>
+
+            <td class="hide-1">{{current.time}}</td>
+            <td class="hide-1">{{current.fromNow}}</td>
+            <td class="star">
+                <img *ngIf="current.imageSource == '/markit/assets/img/star.png'" class="dashboard_star" alt="not_favourite"
+                     src="{{current.imageSource}}"
+                     onmouseover="this.src='/markit/assets/img/star_highlight.png';"
+                     onmouseout="this.src='/markit/assets/img/star.png';"
+                     (click)="addFavourite(current.id.toString())"/>
+
+                <img *ngIf="current.imageSource == '/markit/assets/img/star_highlight.png'" class="dashboard_star" alt="favourite"
+                     src="{{current.imageSource}}"
+                     onmouseover="this.src='/markit/assets/img/star.png';"
+                     onmouseout="this.src='/markit/assets/img/star_highlight.png';"
+                     (click)="removeFavourite(current.favouriteId.toString())"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

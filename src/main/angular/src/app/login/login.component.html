@@ -1,0 +1,69 @@
+<div class="row mt-3">
+	<div class="col-xs-10 col-md-8 mx-auto">
+		<form (ngSubmit)="onSubmit()">
+			<div class="card">
+				<div class="card-block">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12">
+							<div class="d-flex justify-content-center">
+								<p class="h3">Sign in to MarkIt</p>
+							</div>
+						</div>
+					</div>
+					<div *ngIf="validationMessage">
+						<div class="row">
+							<div class="col">
+								<div class="alert alert-danger">
+									{{validationMessage}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="mt-1 col-xs-10 col-md-10 mx-auto">
+								<label for="markit-username">Username</label>
+							<div class="input-group w-100">
+								<input type="text" name="username" id="markit-username"
+									[(ngModel)]="username" class="form-control" />
+							</div>
+						</div>
+					</div>
+					<div class="row mt-1">
+						<div class="mt-1 col-xs-10 col-md-10 mx-auto">
+								<label for="markit-password">Password</label>
+							<div class="input-group w-100">
+								<input name="password" type="password" class="form-control"
+									[(ngModel)]="password" id="markit-password" />
+							</div>
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col-xs-10 col-md-10 mx-auto">
+							<button [disabled]="submitted" type="submit" class="btn btn-primary">Sign In</button>
+							<div class="mt-2">
+							<div id="fb-root">
+								<div class="fb-login-button" data-max-rows="1"
+										data-size="large" data-button-type="continue_with"
+										data-show-faces="false" data-auto-logout-link="false"
+										data-use-continue-as="false"></div>
+							</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-2">
+						<div class="col-xs-10 col-md-10 mx-auto">
+							<div class="card">
+								<div class="card-block">
+									<div>
+										<span>Don't have an account?&nbsp;&nbsp;</span><a
+											routerLink="/register">Register now</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

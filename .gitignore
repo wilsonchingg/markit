@@ -1,0 +1,42 @@
+# Mac
+.DS_Store
+
+# Eclipse
+.classpath
+.springBeans
+.settings
+.project
+.metadata
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# Npm
+node_modules/
+
+# Mvn
+target
+
+.idea
+
+# Netbeans
+nb-configuration.xml
+
+#Angular
+*.map
+**/ag/*.html
+
+#Intellij
+src/main/lib
+bin
+lib
+.idea
+out
+*.iml
+*.class

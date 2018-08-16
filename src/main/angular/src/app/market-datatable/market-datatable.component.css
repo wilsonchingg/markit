@@ -1,0 +1,37 @@
+.markit-datatable table{
+  width: 100% !important;
+}
+
+.markit-datatable thead{
+  background-color: steelblue;
+  color: white;
+}
+
+#currency-converter .card-block{
+  background-color: lightblue;
+}
+
+.markit-datatable-nofilter .dataTables_filter {
+  display: none;
+}
+
+@media (max-width: 992px){
+  .hide-1{
+    display: none;
+  }
+}
+
+@media (max-width: 491px){
+  .hide-2{
+    display: none;
+  }
+}
+.star:hover{
+  background: url("/markit/assets/img/star_highlight.png");
+  height: 30px;
+  width: 30px;
+}
+.dashboard_star{
+  height: 30px;
+  width: 30px;
+}

@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header rss-card-header">
+    <h5>Latest News</h5>
+  </div>
+  <div class="card-block">
+    <div class="rss-container" [ngStyle]="getContainerStyle()">
+      <div *ngFor="let rss of rssList;let i = index" >
+        <small>
+          <div>
+            <div>{{rss.createdDate.toUTCString()}}</div>
+            <div class="my-1"><a target="_blank" href="{{rss.link}}">{{rss.title}} <i>{{rss.creator}}</i></a></div>
+            <div [innerHTML]="rss.description"></div>
+          </div>
+        </small>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+#currency-summary #currency-detail *{
+  font-size: 17px;
+}
+/* Historic / Current page*/
+.historic-current-container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.historic-card-header{
+    background-color: #21518F;
+    color: white;
+}
+.tab, .tab:hover{
+    color: white;
+}

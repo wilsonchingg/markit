@@ -1,0 +1,19 @@
+<div class=" card currency-preview-container" >
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 chart">
+      <app-graph [widget]="true" [inheritLineChartOptions]="lineChartOptions"
+      [intrinioId]="intrinioId"
+      [onDataAvailable]="onDataAvailable"></app-graph>
+    </div>
+    <div class="col-xs-6 col-sm-6 currency-preview-info">
+      <h5 class="currency-preview-name">{{label}}</h5>
+      <p class="currency-preview-percentage {{change > 0.00005 ? 'text-success': ''}} {{change < -0.00005 ? 'text-danger': ''}}">
+        {{change > 0 ? '+': ''}}{{change === 0? '-':change.toFixed(4)}}
+      </p>
+      <a [routerLink]="infoUrl" class="btn btn-primary currency-preview-btn">Info</a>
+      <div class="mt-1" *ngIf="removable !== 'false'">
+        <button class="btn btn-secondary markit-cursor" id="removeFavourite" (click)="callback(favouriteID)">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>

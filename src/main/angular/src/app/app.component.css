@@ -1,0 +1,21 @@
+#markit-context {
+	min-height: 100%;
+	margin-bottom: -50px;
+	margin-top: -73px;
+}
+
+#markit-context::before {
+	z-index: -1 !important;
+	display: block;
+	content: "";
+	display: block;
+	content: "";
+	height: 73px;
+}
+
+#markit-context::after {
+	z-index: -1 !important;
+	display: block;
+	content: "";
+	height: 50px;
+}

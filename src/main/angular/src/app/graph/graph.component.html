@@ -1,0 +1,18 @@
+<div *ngIf="widget">
+  <canvas baseChart height="110%" width="100%"
+            [datasets]="dataset"
+            [labels]="labels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            chartType="line"></canvas>
+</div>
+<div *ngIf="!widget">
+  <canvas baseChart height="100%"
+          [datasets]="dataset"
+          [labels]="labels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          chartType="line"></canvas>
+</div>

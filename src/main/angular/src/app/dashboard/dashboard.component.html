@@ -1,0 +1,15 @@
+<div class="card-block px-3">
+  <div *ngIf="marketTable.userFavouritesList.length == 0">
+    <div class="card no_favorites">There are no Favourites added to your dashboard</div>
+  </div>
+  <div *ngIf="marketTable.userFavouritesList.length > 0" id="currency" class="row currencies">
+    <div class="col-lg-4 col-md-6 currency" *ngFor="let favourite of marketTable.userFavouritesList; let i = index">
+
+      <app-currency-preview  [label]="favourite.market.name" [callback]="removeFromDashboardList"
+      [intrinioId]="'$D' + favourite.market.symbol"
+      [infoUrl]="'/historicCurrent/' + favourite.market.symbol"
+      [favouriteID]="favourite.id" removable="true"></app-currency-preview>
+    </div>
+  </div>
+  <app-market-datatable #marketTable class='markit-datatable-nofilter' [customFilter] = "filter"></app-market-datatable>
+</div>

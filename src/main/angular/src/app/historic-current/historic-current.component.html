@@ -1,0 +1,46 @@
+<div class="historic-current-container">
+   <!--Chart container-->
+   <div id="currency-summary">
+      <div class="row graph-header">
+         <div class="col mx-3 my-2 card p-0" id="currency-detail">
+
+            <div class="card-header historic-card-header">{{name}}</div>
+            <div class="card-block">
+               <p>Exchange Market: {{exchange}}</p>
+               <p>Current Value: {{currentValue}}</p>
+            </div>
+         </div>
+      </div>
+
+      <div class="row graph-body">
+         <div class="card p-0 col text-center" id="graph-container">
+         <div class="card-header historic-card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+               <li class="nav-item">
+                  <a data-toggle="tab" role="tab" class="nav-link tab active" href="#daily-content">Daily</a>
+               </li>
+               <li class="nav-item">
+                  <a data-toggle="tab" role="tab" class="nav-link tab" href="#monthly-content">Monthly</a>
+               </li>
+               <li class="nav-item">
+                  <a data-toggle="tab" role="tab" class="nav-link tab" href="#annual-content">Annual</a>
+               </li>
+            </ul>
+         </div>
+         <div class="card-block">
+            <div class="tab-content">
+               <div id="daily-content" class="tab-pane active" role="tabpanel">
+                  <app-graph [widget]="false" [intrinioId]="dailyHistoric"></app-graph>
+               </div>
+               <div id="monthly-content" class="tab-pane" role="tabpanel">
+                  <app-graph [widget]="false" [intrinioId]="monthlyHistoric"></app-graph>
+               </div>
+               <div id="annual-content" class="tab-pane" role="tabpanel">
+                  <app-graph [widget]="false" [intrinioId]="annualHistoric"></app-graph>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+   </div>
+</div>

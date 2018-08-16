@@ -1,0 +1,39 @@
+<div class="mx-auto">
+   <header id="search-markets">
+      <div class="card my-3">
+         <div class="card-block px-3">
+            <div class="row">
+               <div class="col-xs-12 col-md-3">
+                  <div class="mx-auto" style="width: 200px;">
+                     <h4>Markets</h4>
+                  </div>
+               </div>
+               <div class="col-xs-12 col-md-9">
+                  <div class="input-group">
+                     <input type="text" class="form-control" placeholder="Search for..." [(ngModel)]="searchText">
+                     <span class="input-group-btn">
+                     <button class="btn mt-0 btn-secondary" type="button">Go!</button>
+                     </span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+   <section id="main-markets">
+      <div class="card my-3">
+         <div class="card-block px-3">
+            <div class="row">
+               <div class="col-sm-12 col-md-8">
+                 <app-market-datatable [ngClass]="customClass" [searchText]="searchText"></app-market-datatable>
+               </div>
+               <div id="rss-news-feed" class="col-sm-12 col-md-4">
+                  <div class="table-responsive-sm">
+                     <app-rss-renderer></app-rss-renderer>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+</div>

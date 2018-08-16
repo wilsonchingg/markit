@@ -1,0 +1,83 @@
+#markit-header{
+	background-color: #21518F !important;
+}
+.markit-header {
+	background-color: #21518F !important;
+	z-index: 1 !important;
+}
+
+.markit-header .navbar-toggler {
+	height: 56px;
+	margin-top: 8.5px;
+	border-width: 2px;
+}
+
+.markit-header .navbar-toggler:not(.nonMember):hover {
+	background-color: #5F8AC1 !important;
+}
+
+.markit-header .nav-item:not(.nonMember):hover {
+	background-color: #5F8AC1 !important;
+}
+
+.markit-logo-text {
+	padding: 5px 0;
+	height: 65px;
+	width: 160px;
+}
+
+.markit-logo {
+	padding: 5px 0;
+	height: 65px;
+	width: 65px;
+}
+
+.navbar-toggle {
+	margin-top: 16.5px;
+	margin-right: 16.5px;
+}
+
+.navbar-nav>li>a {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	line-height: 65px;
+	font-size: 18px;
+}
+
+@media ( max-width : 767px) {
+	.navbar-nav {
+		left: 0;
+	}
+	.navbar-nav>li>a {
+		line-height: 20px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+
+@media ( max-width : 767px) {
+	.navbar-nav {
+		left: 0;
+	}
+	.navbar-nav>li>a {
+		line-height: 20px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+
+@media ( max-width : 400px) {
+	.markit-logo-text {
+		display: none;
+	}
+}
+
+.button-wrapper{
+	height: inherit;
+	margin-top: 13.4px;
+
+}
+
+#registerBtn{
+	width: 110px;
+}

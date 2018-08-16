@@ -1,0 +1,7 @@
+.markit-setting-item:hover, .markit-setting-item.active {
+	background-color: #f6f8fa !important;
+}
+.markit-setting-collapse:hover {
+	background-color: #f7f7f7 !important;
+}
+

@@ -1,0 +1,14 @@
+.rss-card-header {
+  background-color: #21518F !important;
+  color: white;
+}
+
+.rss-container {
+  overflow-y: scroll;
+  overflow-x:hidden;
+}
+
+.rss-container img{
+  width: 100%;
+  height: auto;
+}
